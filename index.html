@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+</head>
+<body>
+    
+
+    <script>
+        var i = 0; //start point
+        var images = [];
+        var time = 3000;
+
+        //Image list
+        images[0] = "DSC_0026.JPG";
+        images[1] = "DSC_0055.JPG";
+        images[2] = "DSC_0064.JPG";
+        images[3] = "DSC_0110.JPG";
+        images[4] = "DSC_0114.JPG";
+
+        //Change image
+        function changeImg() {
+            document.slide.src = images[i];
+
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+
+            setTimeout("changeImg()", time);
+        }
+
+        window.onload = changeImg;
+    </script>
+
+    <img name="slide" width="auto" height="400">
+</body>
+</html>
